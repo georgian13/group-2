@@ -9,3 +9,4 @@ mkdir U3 U4
 cd U4 
 > a.txt
 > b.txt
+echo "script3 finished"

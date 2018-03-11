@@ -1,6 +1,8 @@
 #!/bin/bash
-cd ../output
-rm -r U1
+cd ../output/U1/U2/U4
+echo "U4: a.txt: $(cat  a.txt) "
+echo "U4: b.txt: $(cat  b.txt) "
+
 
 
 

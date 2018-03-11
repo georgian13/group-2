@@ -10,3 +10,4 @@ mkdir U3 U4
 cd U3
 > a.txt 
 > b.txt
+echo "scrips1 finished"
