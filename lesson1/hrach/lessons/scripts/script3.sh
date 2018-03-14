@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /workspace/hrach/group-2/lesson/hrach/lessons/output
+cd /workspace/hrach/group-2/lesson1/hrach/lessons/output
 rm -r U1
 mkdir U1
 cd U1
