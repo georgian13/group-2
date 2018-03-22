@@ -20,6 +20,6 @@ int main(){
     double javel = 4;
     double plintus = 3.5;
         allSum = snickers * snickersSum + hamburger * hamburgerSum + cola * colaSum + panda * pandaSum + roshen * roshenSum + javel * javelSum + bread * breadSum + vodka * vodkaSum + plintus * plintusSum;
-            std::cout<<"yndhanur arjeqn  e  "<<allSum<<" $"<<std::endl;
+            std::cout << "yndhanur arjeqn  e  " << allSum << " $" << std::endl;
 
 }

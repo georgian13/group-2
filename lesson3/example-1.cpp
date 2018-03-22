@@ -3,7 +3,7 @@
 int main() {
     int a, age;
     std::string name;
-    std::cout <<"What is your name?: ";
+    std::cout << "What is your name?: ";
     std::cin >> name;
     std::cout << "How old are you?: ";
     std::cin >> age;
