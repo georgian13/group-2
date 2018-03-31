@@ -1,7 +1,9 @@
 #include <iostream>
 long int num(int n,int k) {
-    if ( k > 1 ) {
-            return n * num(n, --k);
+    if ( k > 0 ) {
+        return n * num(n, --k);
+    }else {
+        return 1;
     }
 }
 
