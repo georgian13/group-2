@@ -12,7 +12,6 @@ int main() {
     std::cout << "Enter unsigned number \n";
     std::cin >> b;
     if ( b >= 0 ) {
-        factorial(b);
         std::cout << b << " ! = " << factorial(b) << std::endl;
     } else {
         std::cout << "This number is signed \n";

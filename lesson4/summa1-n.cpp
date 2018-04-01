@@ -10,7 +10,6 @@ int main() {
     std::cout << "Enter unsigned number \n";
     std::cin >> b;
     if ( b > 0 ) {
-        summa(b);
         std::cout << "1 - " << b << " summa equale " << summa(b) << std::endl;
     } else {
         std::cout << "This number is signed or zero \n" ;

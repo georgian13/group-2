@@ -14,9 +14,7 @@ int main() {
     std::cout << "Enter unsigned number \n";
     std::cin >> b;
     if ( b > 0 ) {
-        std::cout << "Mirror number => "; 
-        mirror(b);
-        std::cout<<"\n";
+        std::cout << "Mirror number => " << mirror(b) << std::endl;
     } else {
         std::cout << "This number is signed or zero \n" ;
     }

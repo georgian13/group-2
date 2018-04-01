@@ -17,7 +17,6 @@ int main() {
         if ( k == 0 ) {
             std::cout << n << " ^ " << k << " = 1 \n";
         } else {
-            num(n, k);
             std::cout << n << " ^ " << k << " = "<< num(n, k) << std::endl;
         }
     } else {
