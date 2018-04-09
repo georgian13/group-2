@@ -1,7 +1,8 @@
 #include <iostream>
-int masiv_maxmin(int *parr) {
+#include <cstdlib>
+void masiv_maxmin(int *parr,int n) {
     int max= parr[0],min = parr[0];
-    for (int i=1; i<5; i++) {
+    for (int i=1; i<n; i++) {
         if(parr[i] > max) {
             max = parr[i];
         } if(parr[i] < min) {
@@ -12,9 +13,9 @@ int masiv_maxmin(int *parr) {
     std::cout <<'\n'<<"This masiv minimal element = "<< min <<'\n';;
 }
 
-int masiv_pairodd(int *parr) {
+void masiv_pairodd(int *parr,int n) {
     int sum_pair = 0, sum_odd = 0;
-    for (int i=0; i<5; i++) {
+    for (int i=0; i<n; i++) {
         if(parr[i]  % 2 == 0) {
             sum_pair += parr[i];
         } else {
@@ -26,13 +27,16 @@ int masiv_pairodd(int *parr) {
 }
 
 int main() {
-    int arr[5];
-    for (int i=0; i<5; i++) {
-        std::cout <<"arr [ "<< i <<" ] = ";
-        std::cin >> arr[i];
+    int n;
+    std::cout <<"Input hight :: ";
+    std::cin >> n;
+    int arr[n];
+    for (int i=0; i<n; i++) {
+        arr[i]= 1+ rand()%20;
+        std::cout <<"arr [ "<< i <<" ] = "<< arr[i] <<'\n';
     }
-    masiv_maxmin(arr);
+    masiv_maxmin(arr,n);
     std::cout <<'\n';
-    masiv_pairodd(arr);
+    masiv_pairodd(arr,n);
     return 0;
 }

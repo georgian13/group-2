@@ -1,125 +1,45 @@
 #include <iostream>
-int ver_dzax(int **parr) {
-    int sum = 0;
-    int n=3;
+#include <cstdlib>
+int main() {
+    int n;
+    std::cout <<"Input hight :: ";
+    std::cin >>n;
+    int arr[n][n];
+    for (int i=0; i<n; i++) {
+        for (int j=0; j<n; j++) {
+            arr[i][j]=1+rand()%9;
+            std::cout <<"arr [ "<< i <<" ][ "<< j <<" ] = "<< arr[i][j] <<'\n';
+        }
+    }
+    int sum1 = 0, sum2 = 0,sum3 = 0,sum4 = 0,sum5 = 0,sum6 = 0,sum7 = 0,sum8 = 0;
     for (int i=0; i<n; i++) {
         for (int j=0; j<n; j++) {
             if((i+j) < (n-1)) {
-                sum += parr[i][j];
+                sum1 += arr[i][j];
+            } if(i<j) {
+                sum2 += arr[i][j];
+            } if(i>j) {
+                sum3 += arr[i][j];
+            } if((i+j) > n-1) {
+                sum4 += arr[i][j];
+            } if((i+j) >  n-1 && i>j) {
+                sum5 += arr[i][j];
+            } if((i+j) > n-1&&i<j) {
+                sum6 += arr[i][j];
+            } if((i+j) < n-1 && j<i) {
+                sum7 += arr[i][j];
+            } if((i+j) < n-1 && j>i) {
+                sum8 += arr[i][j];
             }
         }
     }
-    std::cout <<"Werevi Dzax koxmi gumary = "<< sum <<'\n';
-}
-
-int ver_aj(int **parr) {
-    int sum = 0;
-    int n = 3;
-    for (int i=0; i<n; i++) {
-        for (int j=0; j<n; j++) {
-            if(i<j) {
-                sum += parr[i][j];
-            }
-        }
-    }
-    std::cout <<"Werevi Aj koxmi gumary = "<< sum <<'\n';
-}
-
-int nerqev_dzax(int **parr) {
-    int sum = 0;
-    int n = 3;
-    for (int i=0; i<n; i++) {
-        for (int j=0; j<n; j++) {
-            if(i>j) {
-                sum += parr[i][j];
-            }
-        }
-    }
-    std::cout <<"Nerqev Dzax koxmi gumary = "<< sum <<'\n';
-}
-
-int nerqev_aj(int **parr) {
-    int sum = 0;
-    int n = 3;
-    for (int i=0; i<n; i++) {
-        for (int j=0; j<n; j++) {
-            if((i+j) > n-1) {
-                sum += parr[i][j];
-            }
-        }
-    }
-    std::cout <<"Nerqev Aj koxmi gumary = "<< sum <<'\n';
-}
-
-int nerqev(int **parr) {
-    int sum = 0;
-    int n = 3;
-    for (int i=0; i<n; i++) {
-        for (int j=0; j<n; j++) {
-            if((i+j) >  n-1 && i>j) {
-                sum += parr[i][j];
-            }
-        }
-    }
-    std::cout <<"Nerqevi koxmi gumary = "<< sum <<'\n';
-}
-int aj(int **parr) {
-    int sum = 0;
-    int n = 3;
-    for (int i=0; i<n; i++) {
-        for (int j=0; j<n; j++) {
-            if((i+j) < n-1&&i<j) {
-                sum += parr[i][j];
-            }
-        }
-    }
-    std::cout <<"Aj koxmi gumary = "<< sum <<'\n';
-}
-
-int dzax(int **parr) {
-    int sum = 0;
-    int n = 3;
-    for (int i=0; i<n; i++) {
-        for (int j=0; j<n; j++) {
-            if((i+j) > n-1 && i<j) {
-                sum += parr[i][j];
-            }
-        }
-    }
-    std::cout <<"Nerqev Aj koxmi gumary = "<< sum <<'\n';
-}
-
-int verev(int **parr) {
-    int sum = 0;
-    int n = 3;
-    for (int i=0; i<n; i++) {
-        for (int j=0; j<n; j++) {
-            if((i+j) < n-1 && j>i) {
-                sum += parr[i][j];
-            }
-        }
-    }
-    std::cout <<"Verevi koxmi gumary = "<< sum <<'\n';
-}
-
-
-
-int main() {
-    int arr[3][3];
-    int n = 3;
-    for (int i=0; i<n; i++) {
-        for (int j=0; j<n; j++) {
-            std::cout <<"arr [ "<< i <<" ][ "<< j <<" ] = ";
-            std::cin >> arr[i][j];
-        }
-    }
-    ver_dzax((int**)arr);
-    ver_aj((int**)arr);
-    nerqev_dzax((int**)arr);
-    nerqev_aj((int**)arr);
-    verev((int**)arr);
-    nerqev((int**)arr);
-    aj((int**)arr);
-    dzax((int**)arr);
+    std::cout <<"Werevi Dzax koxmi gumary = "<< sum1 <<'\n';
+    std::cout <<"Werevi Aj koxmi gumary = "<< sum2 <<'\n';
+    std::cout <<"Nerqev Dzax koxmi gumary = "<< sum3 <<'\n';
+    std::cout <<"Nerqev Aj koxmi gumary = "<< sum4 <<'\n';
+    std::cout <<"Nerqevi koxmi gumary = "<< sum5 <<'\n';
+    std::cout <<"Aj koxmi gumary = "<< sum6 <<'\n';
+    std::cout <<"Dzax koxmi gumary = "<< sum7 <<'\n';
+    std::cout <<"Verevi koxmi gumary = "<< sum8 <<'\n'; 
     return 0;
 }
