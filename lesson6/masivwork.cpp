@@ -10,7 +10,7 @@ int main() {
         }
         std::cout <<'\n';
     }
-    int sum1 = 0, sum2 = 0,sum3 = 0,sum4 = 0,sum5 = 0,sum6 = 0,sum7 = 0,sum8 = 0;
+    int sum1 = 0, sum2 = 0,sum3 = 0,sum4 = 0,sum5 = 0,sum6 = 0,sum7 = 0,sum8 = 0,sum9 = 0,sum10 =0;
     for (int i=0; i<n; i++) {
         for (int j=0; j<n; j++) {
             if((i+j) < (n-1)) {
@@ -29,6 +29,10 @@ int main() {
                 sum7 += arr[i][j];
             } if((i+j) < n-1 && j>i) {
                 sum8 += arr[i][j];
+            } if(i==j) {
+                sum9 += arr[i][j];
+            } if(i+j == n-1) {
+                sum10 += arr[i][j];
             }
         }
     }
@@ -40,5 +44,7 @@ int main() {
     std::cout <<"Aj koxmi gumary = "<< sum6 <<'\n';
     std::cout <<"Dzax koxmi gumary = "<< sum7 <<'\n';
     std::cout <<"Verevi koxmi gumary = "<< sum8 <<'\n'; 
+    std::cout <<"Glxavor ankyunagci gumary = "<< sum9 <<'\n';
+    std::cout <<"Erkrordakan ankyunasgci gumary = "<< sum10 <<'\n';
     return 0;
 }
