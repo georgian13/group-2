@@ -1,15 +1,14 @@
 #include <iostream>
 #include <cstdlib>
 int main() {
-    int n;
-    std::cout <<"Input hight :: ";
-    std::cin >>n;
+    int n=5;
     int arr[n][n];
     for (int i=0; i<n; i++) {
         for (int j=0; j<n; j++) {
             arr[i][j]=1+rand()%9;
-            std::cout <<"arr [ "<< i <<" ][ "<< j <<" ] = "<< arr[i][j] <<'\n';
+            std::cout << arr[i][j] <<" ";
         }
+        std::cout <<'\n';
     }
     int sum1 = 0, sum2 = 0,sum3 = 0,sum4 = 0,sum5 = 0,sum6 = 0,sum7 = 0,sum8 = 0;
     for (int i=0; i<n; i++) {

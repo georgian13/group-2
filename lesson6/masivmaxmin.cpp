@@ -27,9 +27,7 @@ void masiv_pairodd(int *parr,int n) {
 }
 
 int main() {
-    int n;
-    std::cout <<"Input hight :: ";
-    std::cin >> n;
+    int n=10;
     int arr[n];
     for (int i=0; i<n; i++) {
         arr[i]= 1+ rand()%20;
