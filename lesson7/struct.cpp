@@ -141,9 +141,10 @@ int  main() {
     std::cout <<"ITC-STEPANAKERT-2 xmbum kan 13 usanox nrancic \n";
     std::cout <<"voreve meki masin informacia stanalu hamar nermuceq \n";
     std::cout <<"Anun Azganun formatov text :: \n";
+    std::cout << "\nTigran, Nvard, Mariam, Edgar, Lilit, Hrach, Armen, Arpine, Ani, Artur, Miqael, Sasha, Nona\n";
     std::string name, lastname;
     Person p;
-    std::cout << "Input name ::  ";
+    std::cout << "\nInput name ::  ";
     std::cin >>name;
     std::cout << "Input lastname ::  ";
     std::cin >>lastname;
