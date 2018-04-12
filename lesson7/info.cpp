@@ -4,10 +4,10 @@ struct Person {
     std::string name;
     std::string lastName;
     int age;
-    int gender;
+    char gender;
     bool student;
     bool famaly;
-    void rezult(std::string Name, std::string LastName, int Age, int Gender, bool Student, bool Famaly) {
+    void rezult(std::string Name, std::string LastName, int Age, char Gender, bool Student, bool Famaly) {
         name = Name;
         lastName = LastName;
         age = Age;
@@ -16,15 +16,15 @@ struct Person {
         famaly = Famaly;
     }
     void print() {
-        if (gender == 1) {
-            std::cout <<"Mister ";
+        if (gender == '1') {
+            std::cout <<"\nMister ";
         } else if (famaly) {
-            std::cout <<"Miss ";
+            std::cout <<"\nMissis ";
         } else {
-            std::cout <<"Missis ";
+            std::cout <<"\nMiss ";
         }
         std::cout << name << ' ' << lastName << ' ' << age << " years old ";
-        if (gender == 1) {
+        if (gender == '1') {
             std::cout <<"Male ";
         } else {
             std::cout <<"Famale ";
@@ -41,9 +41,8 @@ int status(Person *parray, std::string anun, int size) {
     for (int i = 0; i < size; i++) {
         if (anun == parray[i].name) {
             parray[i].print();
-            return i;
+            return 0;
         }
     }
     std::cout <<"Error !!!\n";
-    return -1;
 }
