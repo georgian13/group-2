@@ -36,8 +36,8 @@ int main() {
             }
         }
     }
-    std::cout <<"Werevi Dzax koxmi gumary = "<< sum1 <<'\n';
-    std::cout <<"Werevi Aj koxmi gumary = "<< sum2 <<'\n';
+    std::cout <<"Verevi Dzax koxmi gumary = "<< sum1 <<'\n';
+    std::cout <<"Verevi Aj koxmi gumary = "<< sum2 <<'\n';
     std::cout <<"Nerqev Dzax koxmi gumary = "<< sum3 <<'\n';
     std::cout <<"Nerqev Aj koxmi gumary = "<< sum4 <<'\n';
     std::cout <<"Nerqevi koxmi gumary = "<< sum5 <<'\n';
