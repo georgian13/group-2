@@ -8,7 +8,7 @@ class Circle : public Point {
     private:
         float r;
     public:
-        Circle(float x, float y, float r)
+        Circle(float x = 0, float y = 0, float r = 1)
         :Point(x,y)
             ,r(r)
             {}
@@ -29,7 +29,7 @@ class Circle : public Point {
             return M_PI * r * r;
         }
         void print() {
-            std::cout << "Circle (" << getX() << "," << getY() << ')\n';
+            std::cout << "Circle (" << getX() << "," << getY() << " )\n";
             std::cout << "  r = " << r << std::endl;
         }
 };

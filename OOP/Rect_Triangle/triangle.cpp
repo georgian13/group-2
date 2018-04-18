@@ -1,50 +1,72 @@
 #include <iostream>
-//#include "point.cpp"
 #include <cmath>
-class Triangle//: public Point
-{
+
+class Point {
     private:
-        float ea, eb;
-        unsigned int ank_ab;
-    Triangle(float ea = 1, float eb = 1, unsigned int ank_ab = 90) {
-        this->ea = ea;
-        this->eb = eb;
-        this->ank_ab = ank_ab;
-    }
-    ~Triangle() {}
-    void setA(float ea) {
-        this->ea = ea;
-    }
-    float getA() {
-        return ea;
-                     }
-    void setB(float eb) {
-        this->eb = eb;
-    }
-    float getB() {
-        return eb;
-    }
-    void setC(unsigned int ank_ab) {
-        this->ank_ab = ank_ab;
-    }
-    float getC() {
-        return ank_ab;
-    }
-    float getS() {
-        float S = (ea * eb * std::sin(ank_ab * M_PI / 180))/2;
-        return S;
-    }
-    float getL() {
-        float ec = std::sqrt(std::pow(ea, 2) + std::pow(eb, 2) - 2 * ea * eb * std::cos(ank_ab * M_PI / 180));
-        double large = ea + eb + ec;
-        return large;
-    }
-    void print() {
-        std::cout << "Triangle  " << ea << " & " << eb << "  and "<< ank_ab <<"Radius\n";
-    }
+    float x, y;
+    public:
+        Point(float x=0, float y=0)
+        :x(x)
+        ,y(y) {}
+        Point(const Point& P)
+        :x(P.x)
+        ,y(P.y) {}
+        ~Point() {}
+
 };
+
+class Triangle: public Point {
+		private:
+			float a, b, c;
+		public:
+			Triangle(float a=4, float b=4, float c=4)
+				:a(a)
+				,b(b)
+				,c(c)
+			{	Point(0, 0);
+				Point(a, 0);
+				Point(a/2, b);
+			}
+			~Triangle() {}
+			void set_A(float a) {
+    	this->a = a;
+	 }
+   	   void set_B(float b) {
+ 	   this->b = b;
+     	 	}
+			void set_C(float c) {
+    	this->c = c;
+	 }
+     	 	float get_A() {
+    	return a;
+ 	}
+ 	float get_B() {
+    	return b;
+			}
+     	 	float get_C() {
+    	return c;
+ 	}
+			float Triangle_S(float a, float b, float c) {
+				float p = (a + b + c) / 2;
+				return sqrt(p * (p-a) * (p-b) * (p-c));
+			}
+			float Triangle_P(float a, float b, float c) {
+				return a + b + c; 
+			}
+};
+
 int main() {
-    Triangle T;
-    T.print();
-    return 0;
+	Triangle T;
+	std::cout << "Input a : ";
+	float a;
+	std::cin >> a;
+	std::cout << "Input b : ";
+	float b;
+	std::cin >> b;
+	std::cout << "Input c : ";
+	float c;
+	std::cin >> c;
+	std::cout << "S = " << T.Triangle_S(a, b, c) << std::endl;
+	std::cout << "P = " << T.Triangle_P(a, b, c) << std::endl;
+	return 0;
 }

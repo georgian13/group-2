@@ -6,35 +6,28 @@
 class Line : public Point {
     private:
         Point a;
- 		Point b;
     public:
-        Line(Point a, Point b)
-            :a(a)
-            ,b(b)
-            {}
-            Line(const Line& L) 
-            :a(L.a)
-            ,b(P.b) {}
-        ~Line() {}
-        void print() {
-            a.print();
-            std::cout <<'\n';
-            b.print(); 
+        Line(Point a,Point x,Point y)
+            :a(a) {
+            this->x = x;
+            this->y = y;
         }
-		void setA(Point a) {
+        Line(const Line& L) {}
+        ~Line() {}
+        void setPoint(Point a) {
             this->a = a;
         }
-        void setB(Point b) {
-            this->b = b;
-        }
-        Point getA() {
+        float getPoint() {
             return a;
         }
-        Point setB() {
-            return b;
-        }
         float getLength() {
-            return sqrt(pow((b.getX() - a.getX()), 2) + pow((b.getY() - a.getY()), 2));
+            return sqrt(pow((getPoint() - a.getX()), 2) + pow((getPoint() - a.getY()), 2));
         }
+        void print() {
+            float k = (Point::getY() - a.getY()) / (Point::getX() - a.getPoint());
+            float b = Point::getY() - a.getPoint() * k;
+            for(int x = a.getPoint() + 1; x < Point::getX(); ++x) {
+                std::cout << x <<"  "<< k * x + b <<'\n';
+            }
 };
 #endif

@@ -1,12 +1,12 @@
 #include <iostream>
-#include "circle.cpp"
-#include "line.cpp"
-#include "rectangle.cpp"
+#include "point.cpp"
+//#include "circle.cpp"
+//#include "line.cpp"
+//#include "rectangle.cpp"
 int main() {
     Point P(4,5);
     P.print();
-    P.setX(70);
-    P.setY(10);
+    /*
     std::cout << P.getX() << ' ' <<P.getY() << '\n';
     Circle P(1,2,3);
     P.print();
@@ -21,6 +21,6 @@ int main() {
     L.print();
     std::cout << "The length of line " << L.getLength() << std:: endl;
     Rectangle R(11,6);
-   	R.print();
+   	R.print(); */
     return 0;
 }
