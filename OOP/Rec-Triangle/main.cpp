@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-//#include "point.cpp"
 #include "circle.cpp"
 #include "line.cpp"
 #include "rectangle.cpp"
