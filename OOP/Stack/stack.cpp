@@ -2,7 +2,8 @@
 class Stack {
     private:
         int *array;
-        unsigned int top,lenght;
+        unsigned int lenght;
+        int top;
     public:
         Stack(unsigned int lenght = 20) {
             top = -1;
@@ -41,12 +42,10 @@ class Stack {
             }
         }
         bool isFull() {
-            bool k = (top == lenght - 1) ? true : false;
-            return k;
+            return (top == lenght - 1);
         }
         bool isEmpty() {
-            bool k = (top == -1) ?  true : false;
-            return k;
+            return (top == -1);
         }
         unsigned int size() {
                 return top + 1;
