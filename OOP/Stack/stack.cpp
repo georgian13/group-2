@@ -15,17 +15,14 @@ class Stack {
         }
         void push(int value) {
             if(!isFull()) {
-                top++;
-                array[top] = value;
+                array[++top] = value;
             } else {
                 std::cout<<"Cannot push  Stack full !!!\n";
             }
         }
         int pop() {
             if (!isEmpty()) {
-                int number = array[top];
-                top--;
-                return number;
+                return array[top--];
             } else {
                 std::cout <<"Cannot pop  Stack Empty !!!\n";
                 return -1;
@@ -33,7 +30,7 @@ class Stack {
         }
         void print(){
             if(!isEmpty()){
-                for (int i = 0; i<=top; i++) {
+                for (int i = top; i >= 0; --i) {
                     std::cout << array[i] <<"  ";
                 }
                 std::cout <<'\n';
