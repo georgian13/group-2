@@ -1,42 +1,42 @@
-#ifndef CIRCLE
-#define CIRCLE
+#ifndef circle
+#define circle
+
 #include <iostream>
-#include <cmath>
 #include "point.cpp"
+#include <math.h>
 class Circle : public Point {
     private:
-        Point a;
-        unsigned r;
+        float r;
     public:
-        Circle(Point a, unsigned r = 1)
-        :Point(a)
-        ,r(r)
-        {}
-        Circle(const Circle& c)
-           :Point(c)
-           ,r(c.r) {}
-        void setR(unsigned r) {
+        Circle(float x, float y, float r)
+            :Point(x,y)
+            ,r(r)
+            {}
+        void setR(float r) {
             this->r = r;
         }
         float getR() {
             return r;
         }
-        float getL() {
+        virtual float getP() {
             return 2 * M_PI * r;
         }
-        float getS() {
+        virtual float getS() {
             return M_PI * r * r;
         }
-        double operator* (double k) {
-            double z = r * k;
-            return z;
-        void print() {
-            std::cout << "Circle (" << a.getX() << ", " << a.getY() << " )\n";
-            std::cout << "  r = " << r << std::endl;
+         void print() {
+            std::cout << "Circle (" << getX() << "," << getY() << ')' << "  r = " << r << std::endl;
         }
-        float R() {
-            return std::sqrt(pow(r.getX() - Point::getX(), 2) + pow(r.getY() - Point::getY(), 2));
+	virtual void foo() {
+            std::cout << "Point foo\n";
         }
+        virtual void boo() {
+            std::cout << "Point boo\n";
+	}
+	virtual std::string shape() {
+            return "#This is Circle\n";
+	}
+
 };
 
 #endif

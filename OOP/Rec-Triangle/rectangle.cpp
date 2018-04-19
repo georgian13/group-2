@@ -1,45 +1,61 @@
-#ifndef Rectangle
-#define Rectangle
 #include <iostream>
+#include "line.cpp"
 #include <cmath>
-#include "point.cpp"
 class Rectangle: public Point {
     private:
-        Point a;
+        Point b;
     public:
-        Rectangle(Point a,Point b)
-        :Point(b)
-    {
-        this->a = a;
-    }
-    ~Rectangle() {}
-    void setA(Point a) {
-        this->a = a;
-    }
-    Point getA() {
-        return a;
-    }
-    float lenght() {
-        return  std::abs(a.getX() - Point::getX());
-    }
-    float width() {
-        return  std::abs(a.getY() - Point::getY());
-    }
-    float Rectangle_S() {
-        return lenght() * width();
-    }
-    float Rectangle_P() {
-        return 2 * (lenght() + width());
-    }
-    void print() {
-        for (int i = 0; i < lenght(); ++i) {
-            for (int i = 0; i < width(); ++i) {
-                std::cout <<"* ";
+        Rectangle(Point a, Point b)
+            : Point(a)
+            , b(b)
+            {}
+        Rectangle(Rectangle& r) 
+            :Point(r)
+            ,b(r.b)
+            {
+
             }
-            std::cout <<'\n';;
+            ~Rectangle() {}
+        void setA(Point a) {
+            Point::setX(a.getX());
+            Point::setY(a.getY());
         }
-    }
+        Point getA() {
+            return Point(Point::getX(), Point::getY());
+        }
+        void setB(float b) {
+            this->b = b;
+        }
+        Point getB() {
+            return b;
+        }
+        float length() {
+            return std::abs(Point::getX() - b.getX());
+        }
+        float width() {
+            return std::abs(Point::getY() - b.getY());
+        }
+        virtual float getP() {
+            return 2 * (length() + width());
+        }
+        virtual float getS() {
+            return length() * width();
+        }
+        virtual void print() {
+            for (int i = 0; i < length(); ++i) {
+                for (int j = 0; j <width(); ++j) {
+                    std::cout <<"* ";
+                }
+                std::cout <<'\n';
+            }
+        }
+        virtual void foo() {
+            std::cout << "Point foo\n";
+        }
+        virtual void boo() {
+            std::cout << "Point boo\n";
+        }
+        virtual std::string shape() {
+            return "#This is Rectangle\n";
+        }
 };
-#endif
-
-

@@ -1,32 +1,70 @@
-#ifndef Line
-#define Line
+#ifndef LINE
+#define LINE
 #include <iostream>
-#include <cmath>
+#include "point.cpp"
+#include <math.h>
 class Line : public Point {
     private:
-        Point a;
+        Point b;
     public:
-        Line(Point a,Point b)
-        :Point(b) {
-            this->a = a;
+        Line(Point a, Point b)
+            :Point(a)
+            ,b(b)
+            {}
+        Line(const Line & l)
+            :Point(l)
+            ,b(l.b)
+            {
+                std::cout << "Line Coppy constructor\n";
         }
-        Line(const Line& l) {}
         ~Line() {}
+        void print() {
+            Point::print();
+            b.print();
+        }
         void setA(Point a) {
-            this->a = a;
+            Point::setX(a.getX());
+            Point::setY(a.getY());
+        }
+        void setB(Point b) {
+            this->b = b;
         }
         Point getA() {
-            return a;
+            return Point(Point::getX(), Point::getY());
         }
-        float getLength() {
-            return Point::distance(b);
+        Point getB() {
+            return b;
         }
-        void PrintCoord(){
-            float k = (a.getY() - Point::getY()) / (a.getX() - Point::getX());
-            float b = (Point::getY() - Point::getX()) * k;
-                for (int x = Point::getX() + 1; i < a.getX(); i++){
-                    std::cout << "(" << x << "," << k * x  + b << ")\n";
-                }
+        float length() {
+            return distance(b);
         }
+        void cordinates() {
+            if (Point::getX() > b.getX()) {
+                Point value(Point::getX(), Point::getY());
+                Point::setX(b.getX());
+                Point::setY(b.getY());
+                b = value;
+            }
+            float x1 = Point::getX();
+            float y1 = Point::getY();
+            float x2 = b.getX();
+            float y2 = b.getY();
+            float k = (y2 - y1) / (x2 - x1);
+            float d = y1 - x1 * k;
+            for (float i = 1, x = x1 + 1; x < x2; ++x, ++i) {
+                float y = k * x + d;
+                std::cout << 'A' << i << " (" << x << ',' << y << ") \n";
+            }
+        }
+        virtual void foo() {
+            std::cout << "Point foo\n";
+        }
+        virtual void boo() {
+            std::cout << "Point boo\n";
+        }
+        virtual std::string shape() {
+            return "#This is Line \n";
+        }
+
 };
 #endif
