@@ -42,7 +42,7 @@ class Triangle : public Point {
             return Point::distance(b) + b.distance(c) + c.distance(Point(Point::getX(), Point::getY()));
         }
         virtual float getS() {
-            float p = P() / 2;
+            float p = getP() / 2;
             float ab = Point::distance(b);
             float bc = b.distance(c);
             float ca = c.distance(Point(Point::getX(), Point::getY()));
@@ -52,10 +52,10 @@ class Triangle : public Point {
             std::cout << "Print Triangle\n";
         }
         virtual void foo() {
-            std::cout << "Point foo\n";
+            std::cout << "Triangle foo\n";
         }
         virtual void boo() {
-            std::cout << "Point boo\n";
+            std::cout << "Triangle boo\n";
         }
         virtual std::string shape() {
             return "#This is Triangle\n";

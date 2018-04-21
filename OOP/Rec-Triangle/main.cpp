@@ -5,7 +5,8 @@
 #include "triangle.cpp"
 int main() {
     Point p(4,5);
-    p.print();
+    printS(&p);
+    printP(&p);
     p.setX(3);
     p.setY(5);
     std::cout << p.getX() << ' ' <<p.getY() << '\n';
@@ -21,8 +22,8 @@ int main() {
     Line l(k,p);
     Line u = l;
     l.print();
-    l.cordinates();
-    std::cout << "The length of line " << l.length() << std :: endl;
+    l.getS();
+    std::cout << "The length of line " << l.getP() << std :: endl;
     Rectangle t(p,k);
     Rectangle w = t;
     std::cout << "\nParagic = " << w.getP() << "\nMakeres = " << w.getS() << std::endl;
@@ -38,6 +39,5 @@ int main() {
     Point z;
     printS(&z);
     printP(&z);
-
     return 0;
 }

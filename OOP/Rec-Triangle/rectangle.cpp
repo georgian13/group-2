@@ -41,7 +41,7 @@ class Rectangle: public Point {
         virtual float getS() {
             return length() * width();
         }
-        virtual void print() {
+        void print() {
             for (int i = 0; i < length(); ++i) {
                 for (int j = 0; j <width(); ++j) {
                     std::cout <<"* ";
@@ -50,10 +50,10 @@ class Rectangle: public Point {
             }
         }
         virtual void foo() {
-            std::cout << "Point foo\n";
+            std::cout << "Rectangle foo\n";
         }
         virtual void boo() {
-            std::cout << "Point boo\n";
+            std::cout << "Rectangle boo\n";
         }
         virtual std::string shape() {
             return "#This is Rectangle\n";

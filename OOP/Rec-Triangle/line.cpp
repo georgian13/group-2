@@ -12,10 +12,10 @@ class Line : public Point {
             ,b(b)
             {}
         Line(const Line & l)
-            :Point(l)
-            ,b(l.b)
-            {
-                std::cout << "Line Coppy constructor\n";
+        :Point(l)
+        ,b(l.b)
+        {
+            std::cout << "Line Coppy constructor\n";
         }
         ~Line() {}
         void print() {
@@ -35,10 +35,10 @@ class Line : public Point {
         Point getB() {
             return b;
         }
-        float length() {
+        virtual float getP() {
             return distance(b);
         }
-        void cordinates() {
+        virtual float getS() {
             if (Point::getX() > b.getX()) {
                 Point value(Point::getX(), Point::getY());
                 Point::setX(b.getX());
@@ -55,12 +55,13 @@ class Line : public Point {
                 float y = k * x + d;
                 std::cout << 'A' << i << " (" << x << ',' << y << ") \n";
             }
+            return -1;
         }
         virtual void foo() {
-            std::cout << "Point foo\n";
+            std::cout << "Line foo\n";
         }
         virtual void boo() {
-            std::cout << "Point boo\n";
+            std::cout << "Line boo\n";
         }
         virtual std::string shape() {
             return "#This is Line \n";

@@ -24,18 +24,18 @@ class Circle : public Point {
         virtual float getS() {
             return M_PI * r * r;
         }
-         void print() {
+        void print() {
             std::cout << "Circle (" << getX() << "," << getY() << ')' << "  r = " << r << std::endl;
         }
-	virtual void foo() {
-            std::cout << "Point foo\n";
+        virtual void foo() {
+            std::cout << "Circle foo\n";
         }
         virtual void boo() {
-            std::cout << "Point boo\n";
-	}
-	virtual std::string shape() {
+            std::cout << "Circle boo\n";
+        }
+        virtual std::string shape() {
             return "#This is Circle\n";
-	}
+        }
 
 };
 

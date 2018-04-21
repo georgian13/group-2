@@ -52,6 +52,15 @@ class Point: public Shape {
         virtual std::string shape() {
             return "#This is Point \n";
         }
+        virtual float getP() {
+            std::cout << "This shape NO getP()\n";
+            return -1;
+        }
+        virtual float getS() {
+            std::cout << "This shape NO getS()\n";
+            return -1;
+        }
+
 };
 
 #endif
