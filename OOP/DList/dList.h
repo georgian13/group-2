@@ -1,7 +1,5 @@
 #ifndef LIST
 #define LIST
-
-
 class List {
     private:
         struct Node {
@@ -34,5 +32,4 @@ class List {
         int size();
         void print();
 };
-
 #endif
