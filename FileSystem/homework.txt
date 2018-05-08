@@ -1,0 +1,159 @@
+1_SWAP
+
+	1 sudo fallocate -l 512M /swapfile
+	2 sudo chmod 600 /swapfile
+	3 sudo mkswap /swapfile
+	   //  Setting up swapspace version 1, size = 512 MB (536866816 bytes)
+	   //  no label, UUID=8bc09176-bbf5-4221-9c4d-a1c4fb6b521f
+	4 sudo swapon /swapfile
+	5 sudo swapon -s
+	6 sudo vim /etc/fstab
+	7 /swapfile   none    swap    sw    0   0
+	8 apt-get install htop
+	9 htop
+	10 sudo swapoff /swapfile
+
+
+
+2_BOOTPROCESS
+
+	1 cd /var/tmp/
+	2 sudo touch test_script.sh
+	3 sudo chmod 777 test_script.sh
+	4 vim test_script.sh
+	5 #!/bin/bash
+	  echo "This is a sample script to test auto run during boot" > /var/tmp/script.out
+	  echo "The time the script run was -->  `date`" >> /var/tmp/script.out
+	6 cd /etc/systemd/system/
+	7 sudo touch sample.service
+	8 sudo chmod 777 sample.service
+	9 vim sample.service
+	10 [Unit]
+	  Description=Description for sample script goes here
+	  After=network.target	
+
+	  [Service]
+	  Type=simple
+	  ExecStart=/var/tmp/test_script.sh
+	  TimeoutStartSec=0
+
+	  [Install]
+	  WantedBy=default.target
+	11 systemctl daemon-reload
+	12 systemctl enable sample.service
+	13 systemctl start sample.service
+	14 systemctl reboot
+
+
+3_RUNLEVEL
+
+	1 who -r
+	2 telinit 6
+	3 sudo id:4:initdefault:
+	4 init6
+	5 apt-get install sysv-rc-conf
+	6 sysv-rc-conf
+	7 sudo vim /etc/init/rc-sysinit.conf
+		env DEFAULT_RUNLEVEL=4
+	8 reboot
+
+
+4_FIND THE TEXT
+	
+	1 cd /home/Desktop
+	2 mkdir find
+	3 cd find
+	4 mkdir dir1 dir2 dir3
+	5 cd dir1
+	6 touch file1.txt file2.txt
+	7 cd ../dir2
+	8 touch file3.txt file4.txt
+	9 cd ../dir3
+	10 touch file5.txt
+	11 mkdir dir4
+	12 cd dir4
+	13 touch file6.txt file7.txt
+	14 cd ../../
+	15 grep Hi -r find | sort > sort.txt
+
+5_USER
+
+	1 useradd ogtater1
+	2 sudo passwd ogtater1
+	3 useradd ogtater2
+	4 sudo passwd ogtater2
+	5 useradd ogtater3
+	6 sudo passwd ogtater3
+	7 groupadd xumb1
+	8 groupadd xumb2
+	9 groupadd xumb3
+	10 sudo gpasswd -a ogtater1 xumb1
+	11 sudo gpasswd -a ogtater2 xumb1
+	12 sudo gpasswd -a ogtater2 xumb2
+	13 sudo gpasswd -a ogtater3 xumb2
+	14 sudo gpasswd -a ogtater1 xumb3
+	15 sudo gpasswd -a ogtater2 xumb3
+	16 sudo gpasswd -a ogtater3 xumb3
+	17 sudo chown ogtater1:xumb1 /workspace/hrach
+	18 sudo chmod g+rwx /workspace/hrach
+	19 sudo chmod o+r /workspace/hrach
+	20 sudo chmod o-x /workspace/hrach
+	21 ls -l
+	22 sudo groupdel xumb1
+	23 sudo groupdel xumb2
+	24 sudo groupdel xumb3
+	25 sudo userdel ogtater1
+	26 sudo userdel ogtater2
+	27 sudo userdel ogtater3
+
+	// Այս հրամանով տեսնում ենք թե user որ group է գտնվում; 
+		cat /etc/group | grep ogtater1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
