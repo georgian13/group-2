@@ -1,0 +1,147 @@
+1 Verify whether dhclient is running.
+ 
+sudo apt-get install dhclient
+ps fax | grep dhclient
+
+	6276 ?   S    0:00  \_ /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper-	
+	pf /var/run/dhclient-enp4s0.pid -lf /var/lib/NetworkManager/					
+	dhclient-32969cbe-8a6e-3551-	be89-31fc783d705c-enp4s0.lease -cf /var/lib/NetworkManager/		
+	dhclient-enp4s0.conf enp4s0
+	6701 pts/2  S+  0:00   \_ grep --color=auto dhclient
+	
+
+2. Display your current ip address
+
+/sbin/ifconfig | grep 'inet '
+	inet addr:192.168.1.135  Bcast:192.168.1.255  Mask:255.255.255.0
+        inet addr:127.0.0.1  Mask:255.0.0.0
+
+3. Display the configuration file where this ip address is defined.
+
+cat /etc/network/interfaces
+	# interfaces(5) file used by ifup(8) and ifdown(8)
+	auto lo
+	iface lo inet loopback
+
+
+4. Follow the nic configuration in the book to change your ip address from dhcp client to fixed. Keep the same ip address to avoid conflicts!
+
+Ubuntu/Debian:
+ifdown enp4s0
+vim /etc/network/interfaces
+ifup enp4s0
+
+
+5.  Did  you  also  configure  the  correct  gateway in  the  previous  question  ?  If  not,  then  do this now.
+
+
+
+6. Verify that you have a gateway.
+
+/sbin/route
+	Kernel IP routing table
+	Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+	default         192.168.1.1     0.0.0.0         UG    100    0        0 enp4s0
+	link-local      *               255.255.0.0     U     1000   0        0 enp4s0
+	192.168.1.0     *               255.255.255.0   U     100    0        0 enp4s0
+
+
+7. Verify that you can connect to the gateway, that it is alive.
+
+ping -c3 192.168.1.1
+	PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+	64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=0.554 ms
+	64 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=0.571 ms
+	64 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=0.531 ms
+
+	--- 192.168.1.1 ping statistics ---
+	3 packets transmitted, 3 received, 0% packet loss, time 2056ms
+	rtt min/avg/max/mdev = 0.531/0.552/0.571/0.016 ms
+
+8. Change the last two digits of your mac address.
+
+ifconfig
+sudo ifconfig enp4s0  hw ether 00:25:11:74:c5:8b
+	enp4s0    Link encap:Ethernet  HWaddr 00:25:11:74:c5:8c  
+
+
+9. Which ports are used by http, pop3, ssh, telnet, nntp and ftp ?
+
+grep ^'http ' /etc/services
+	http		80/tcp		www		# WorldWideWeb HTTP
+	http		80/udp				# HyperText Transfer Protocol
+
+grep ^'smtp' /etc/services
+	smtp		25/tcp		mail
+
+grep ^'ssh' /etc/services
+	ssh		22/tcp				# SSH Remote Login Protocol
+	ssh		22/udp
+
+grep ^'telnet ' /etc/services
+	telnet		23/tcp
+
+grep ^'nntp ' /etc/services
+	nntp		119/tcp		readnews untp	# USENET News Transfer Protocol
+
+grep ^'ftp ' /etc/services
+	ftp		21/tcp
+
+11. Display the hostname of your computer.
+
+hostname
+	student
+
+12. Which ip-addresses did your computer recently have contact with ?
+
+arp -a
+	? (192.168.1.1) at 20:aa:4b:1d:67:52 [ether] on enp4s0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
