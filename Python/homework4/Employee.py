@@ -13,7 +13,7 @@ class Employee(People):
     def __str__(self):
         return "{ "+str(self.first_name) +" "+ str(self.last_name) +" "+ str(self.age)+" "+str(self.staffnum)+" }"
 
-a = People("Galust","Sahakyan",65)
-b = Employee("Galust","Sahakyan",65,"AJ_Naxagah")
+a = People("Hrach","Gevorgyan",21)
+b = Employee("Hrach","Gevorgyan",21,"student")
 print(a)
 print(b)
