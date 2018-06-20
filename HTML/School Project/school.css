@@ -1,0 +1,257 @@
+body {
+    font-family:Tahoma, sans-serif;
+    margin: 0; 
+}
+.reklama {
+    width: 100%;
+    font-size: 14px;
+    height: 50px;
+    background-color: rgba(5, 11, 15, 0.822);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.info {
+    color: aliceblue;
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.sites {
+    font-size: 24px;
+    color: aliceblue;
+    width: 15%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+}
+.school8 {
+    color: aliceblue;
+    width: 100%;
+    height: 500px;
+    background: url(photos/school.jpg) no-repeat center top;
+    background-size: cover;
+    background-position: center center;
+}
+.rgba-vid {
+    background-color:rgba(75, 30, 180, 0.411);
+	width: inherit;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.headname {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.circle {
+    width: 150px;
+    height: 150px;
+    color: aliceblue;
+	border-radius: 150px;
+    background-color: rgb(23, 111, 212);
+    display: flex;
+    font-size:50px;
+    justify-content: center;
+    align-items: center;
+}
+.head-1>div ,.head-2>div, .head-3>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.headname h5 {
+    color: rgb(27, 22, 22);
+}
+.headname h6 {
+    color: rgb(155, 147, 147);
+}
+.schoolphoto {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.fromschool {
+    width: 45%;
+}
+.twophoto {
+    height: 55%;
+}
+.index2 img {
+    width: 350px;
+    height: 250px;
+}
+.pic-1 {
+    
+}
+.pic-2 {
+
+}
+.text {
+    padding: 10px;
+}
+.text p {
+    color: rgb(155, 147, 147);
+}
+.student {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+}
+.info-st {
+    width: 70%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+}
+.info-st h2 {
+    color: rgb(56, 47, 47);
+}
+.info-st p {
+    color: rgb(155, 147, 147);
+}
+.setings {
+    width: 100%;
+    height: 640px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+.setings1, .setings2, .setings3, .setings4 {
+    width: 46%;
+    height: 160px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.set-circle {
+    width: 100px;
+    height: 100px;
+    color:  rgb(194, 127, 51);
+    border-radius: 1000px;
+    border:3px solid rgb(194, 127, 51);
+    font-size:50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.set-text {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: flex-start;
+
+}
+.set-text h5{
+    color:  rgb(194, 127, 51);
+}
+.set-text h6 {
+    color: rgb(155, 147, 147);
+    
+}
+.history {
+    width: 100%;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center; 
+}
+.about {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+}
+.teachers {
+    background-color: blue;
+    width: 100%;
+    height: 480px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    align-self: center;
+}
+.about-1  {
+    height: inherit;
+    width: 100%;
+    text-align: center;
+    color: rgb(23, 111, 212);
+    background-color: rgb(83, 83, 158);
+}
+.about-2  {
+    height: inherit;
+    width: 100%;
+    text-align: center;
+    color: rgb(23, 111, 212);
+    background-color: rgb(146, 113, 40);
+}
+.about-3  {
+    height: inherit;
+    width: 100%;
+    text-align: center;
+    color: rgb(23, 111, 212);
+    background-color: rgb(99, 8, 53);
+}
+.about h2 {
+    color: rgb(44, 43, 43);
+}
+.about p {
+    color: rgb(102, 70, 70);
+}
+.editor p {
+    color: rgb(155, 147, 147);
+}
+.about-1>div, .about-2>div,.about-3>div {
+    padding: 10px 0 0 0;
+}
+.about-1 p,.about-2 p, .about-3 p {
+    padding: 30px;
+}
+.circle-t img {
+    width: 150px;
+    height: 150px;
+	border-radius: 150px;
+    display: flex;
+    flex-direction: column;
+    font-size:50px;
+    justify-content: space-between;
+    align-items: center;
+}
+.pic-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
