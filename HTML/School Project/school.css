@@ -17,21 +17,22 @@ body {
     left: 0;
 }
 .info {
+    font-size: 50%;
     color: aliceblue;
-    width: 45%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .sites {
-    font-size: 24px;
+    font-size: 50%;
     color: aliceblue;
-    width: 15%;
+    width: 20%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .for-school {
     color: aliceblue;
@@ -166,6 +167,8 @@ body {
 .main {
     width: calc(90%/2);
     margin: 30px 30px;
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 8px; 
     display: flex;
     justify-content: flex-start;
 }
@@ -182,8 +185,11 @@ body {
     text-align: center;
 }
 .about-school-3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     width: 100%; 
-    display: none;  
+     
 }
 .about3 {
     margin: 0 15%;
@@ -195,7 +201,8 @@ body {
 .about3-main {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 
@@ -217,7 +224,12 @@ body {
 
 .about3-info {
     display: flex;
-    justify-content: space-around;
+    width: calc(90%/3);
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
 }
 
 .about3-cv {
