@@ -1,25 +1,44 @@
+jQuery(document).ready(function($) {
+    $("#myModal").modal('show');
+  });
 var count = 0;
-function myFunc (F) { 
-    var gender; 
+function push() {  
     if(document.getElementById('gender_Male').checked) {
+        $("#h1").html("Mister");
+    } 
+    if(document.getElementById('gender_Female').checked) {
+        $("#h1").html("Misis");
+    }
+    $('#h1').append("  "+$("#name1").val()+"  ");
+    $("#h1").append($("#surname1").val());
+}
+function addinfo() {
+    var add = "Address: " + $("#address").val();
+    var cty = "City: " + $("#city").val(); 
+    var co  = "Country: " + $("#country").val(); 
+    var ph  = "Phone: " + $("#phone").val(); 
+    var nm  = "Name: " + $("#name").val(); 
+    var snm = "Surname: " + $("#surname").val();       
+    var arr = [add,cty,co,ph,nm,snm];
+       var content = "<table>"
+        for(i=0; i<6; i++){
+            content += '<tr><td>' + arr[i] + '</td></tr>';
+        }
+        content += "</table>"
+        $('#area').append(content); 
+    $("#form2")[0].reset();
+    }
+window.onload = function saveSettings() {
+    var name = document.getElementById("name1").value;
+    var surname = document.getElementById("surname1").value;
+    var gender;
+    if (document.getElementById("surname1").checked) {
         gender = "Mister";
-    }else if(document.getElementById('gender_Female').checked) {
+    } else if(document.getElementById("surname1").checked) {
         gender = "Misis";
     }
-    var txt = [ gender, F ['Name'].value,F ['Surname'].value ].join('  ');
-    mt = document.getElementById ('tool');
-    mt.innerHTML = txt;
-    mc   = document.getElementById ('modal');
-    mc.style.display = 'block';
-    form = document.getElementById ('form1');
-    form.style.display = 'none';
-    fromyou = document.getElementById ('fromyou');
-    fromyou.style.display = 'block';
+    ​var test = { name: name, surname: "thing2", test3: [0, 2, 44] }​​​​​​​;
+    localStorage.setItem("test", JSON.stringify(test));
+    var test2 = localStorage.getItem("test");
+    test = JSON.parse(test2);
 }
-function addinfo (G) {
-    var info = [ G['address'].value, G['sity'].value, G['country'].value, G['phone'].value, G['name'].value, G['surname'].value ].join('\n');
-    document.getElementById ('area').innerHTML += '<textarea readonly rows="6"></textarea>';
-    i = document.getElementsByTagName ('textarea')[count];
-    i.innerHTML = info;
-    count = count + 1;
-    }
