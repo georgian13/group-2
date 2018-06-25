@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+        <script src="script.js" type="text/javascript" async></script>
+        <title>Forma</title>
+    </head>
+<body>
+    <header> &copy ITC Stepanakert 2018</header>
+    <div class="main">
+        <div id="modal">
+            <div class="modal-content">
+                <div id="tool">
+                    
+                </div>
+            </div>
+        </div>
+        <form id="form1">
+            <p>Input your FirsName  <input name="Name"     placeholder="FirsName" />
+            <p>Input your LastName  <input name="Surname"  placeholder="LastName" />
+            <p>Input your Sex 
+            <div id="rates">
+                <input type="radio" name="gender" id="gender_Male"   value="Male"> Male
+                <input type="radio" name="gender" id="gender_Female" value="Female"> Female  
+            </div>  
+            <p><input type="button" value="OK" onclick="myFunc (this.form)" />
+        </form>
+        
+        <div id="fromyou">
+            <div class="mask">
+                <form id="form2">
+                    <input name="address"     placeholder="Address" />
+                    <input name="sity"  placeholder="Sity" />
+                    <input name="country"     placeholder="Country" />
+                    <input name="phone"  placeholder="Phone" />
+                    <input name="name"     placeholder="Name" />
+                    <input name="surname"  placeholder="Surname" />                    
+                    <input class="but" type="button" value="Save" onclick="addinfo (this.form)" />
+                    <input type="reset" value="Clear" />
+                </form>
+                <div id="area">
+                   
+                </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+header {
+    width: 100vw;
+    height: 5%;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(75, 75, 75);
+    color: rgb(214, 189, 189);
+}
+
+.main {
+    width: 100%;
+    padding:0;
+    background-image: url("photos/bg.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
+}
+#form1 {
+    width: calc(100%/3);
+    height: 95vh;
+    background: url(photos/img.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 9px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#form1 p {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+#modal {
+    position: absolute; 
+    width: calc(100%/3); 
+    text-align: center;
+    top:5%;
+    height: 5%;
+    right: 0; 
+    border: 1px solid #000; 
+    border-radius: 9px;
+    background: rgba(134, 103, 45, 0.781);
+    display: none;
+}
+.modal-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#fromyou {
+    width: 100%;
+    height: 85vh;
+    top: 15%;
+    margin: 5% 0 0 0;
+    text-align: center;
+    display: none;
+}
+.mask {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#form2 {
+    width: 100%;
+    height: 100%;
+    background-color:rgba(88, 84, 17, 0.616);;
+    border-radius: 9px;
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+}
+#form2>input {
+    width: calc(87%/3);
+    height: 15%;
+    margin: 1%;
+    padding: 7px;
+    border: 2px solid rgba(156, 35, 35, 0.589);
+    border-radius: 9px; 
+}
+#form2>input:active {
+    border: 2px solid rgba(26, 45, 66, 0.651);
+    border-radius: 9px;
+}
+.but {
+    width: 10%;
+    color: red;
+}
+#area {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("photos/bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+textarea {
+    width: calc(90%/3);
+    
+}
+
+@media screen  and (max-width: 1280px) {
+    #form1 {
+        width: 100%;
+    } 
+    #fromyou {
+        width: 100%;
+    } 
+
+}
