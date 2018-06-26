@@ -2,7 +2,7 @@ jQuery(document).ready(function($)  {
     if (sessionStorage.getItem("name") == null) {
         $("#myModal").modal("show");
     } else {
-        loading();
+        load();
     }
     if (sessionStorage.getItem("key") != null) {
         var res = JSON.parse(sessionStorage["key"]);
@@ -11,14 +11,10 @@ jQuery(document).ready(function($)  {
     $("#myModal").submit(function() {
         if ($("#gender_Male").is(":checked")) {
             $("#modal").html("Misis");
-        }
-
-        if ($("#gender_Female").is(":checked")) {
+        } else {
             $("#modal").html("Misis");
         }
-
         push();
-        saveing();
         $("#myModal").modal("hide");
         return false;
     });
@@ -30,8 +26,9 @@ function push() {
     if(document.getElementById('gender_Female').checked) {
         $("#h1").html("Misis");
     }
-    $('#h1').append("  "+$("#name1").val()+"  ");
+    $('#h1').append("  "+sessionStorage.getItem("name")+"  ");
     $("#h1").append($("#surname1").val());
+    save();
 }
 function addinfo() {
     var add = "Address: " + $("#address").val();
@@ -51,9 +48,9 @@ function addinfo() {
  }
    
  
- function loading() {
-    var name = sessionStorage.getItem("name1");
-    var surname = sessionStorage.getItem("surname1")
+ function load() {
+    var name = sessionStorage.getItem("name");
+    var surname = sessionStorage.getItem("surname")
 
     if (sessionStorage.getItem("gender") == "Male") {
         $("#modal").html("Mister ");
@@ -62,28 +59,23 @@ function addinfo() {
         $("#modal").html("Misis ");
     }
 
-    $("#mame1").text(name);
-    $("surname1").text(surname);
+    $("#modal").text($("#modal").html() + " " + name + " " + surname);
 }
 
-function saveing() {
+function save() {
      var gender = "";
 
     if ($("#gender_Male").is(":checked")) {
         gender = "Male";
     }
-    if ($("#gender_Female").is(":checked")) {
+    else {
         gender = "Female";
     }
 
     sessionStorage.setItem("name", $("#name1").val());
     sessionStorage.setItem("surname", $("#surname1").val());
     sessionStorage.setItem("gender", gender);
-    loading();
-}
-function resultsave() {
-    var json1 = JSON.stringify($("#area").html());
-    sessionStorage.setItem("key", json1);
+    load();
 }
 
 
