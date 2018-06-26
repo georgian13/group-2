@@ -8,19 +8,6 @@ jQuery(document).ready(function($)  {
         var res = sessionStorage.getItem("area");
         $("#area").html(res);
     }
-    $("#myModal").submit(function() {
-        
-        if ($("#gender_Male").is(":checked")) {
-            $("#modal").html("Misis");
-        } else {
-            $("#modal").html("Misis");
-        }
-        
-        $("#myModal").modal("hide");
-        push();
-        return false;
-        
-    });
 
 });
 function push() {  
@@ -82,14 +69,3 @@ function save() {
     sessionStorage.setItem("gender", gender);
     load();
 }
-
-
-
-
-    
-
-        
-       
-
-        
-       
