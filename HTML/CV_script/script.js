@@ -4,20 +4,24 @@ jQuery(document).ready(function($)  {
     } else {
         load();
     }
-    if (sessionStorage.getItem("key") != null) {
-        var res = JSON.parse(sessionStorage["key"]);
-        $("#resultBox").html(res);
+    if (sessionStorage.getItem("area")) {
+        var res = sessionStorage.getItem("area");
+        $("#area").html(res);
     }
     $("#myModal").submit(function() {
+        
         if ($("#gender_Male").is(":checked")) {
             $("#modal").html("Misis");
         } else {
             $("#modal").html("Misis");
         }
-        push();
+        
         $("#myModal").modal("hide");
+        push();
         return false;
+        
     });
+
 });
 function push() {  
     if(document.getElementById('gender_Male').checked) {
@@ -45,6 +49,7 @@ function addinfo() {
         content += "</table>"
         $('#area').append(content); 
     $("#form2")[0].reset();
+    sessionStorage.setItem("area", $("#area").html());
  }
    
  
@@ -77,8 +82,6 @@ function save() {
     sessionStorage.setItem("gender", gender);
     load();
 }
-
-
 
 
 
