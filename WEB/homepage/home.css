@@ -4,7 +4,7 @@ body {
 .etap1 {
     width: 100%;
     margin: 0;
-    background: url(photos/etap1.jpg);
+    background: url(photos/layer-19.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover; 
@@ -68,9 +68,7 @@ body {
     color: white;
     text-align: center;
 }
-#ipsum {
-    display: flex;
-    flex-direction: row;
+span {
     color: #ffc100;
 }
 .part1-3 {
@@ -141,14 +139,14 @@ text-transform: uppercase;
 .mask2 {
     width: 100%;
     margin: 0;
-    background: url(photos/spec.jpg);
+    background: rgb(35, 32, 34);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover; 
 }
 .etap3 {
     width: inherit;
-    background: #3e4d537e;
+    background: url(photos/layer-23.png);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -218,19 +216,27 @@ ul li>div {
 }
 .part4-1 {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
 }
+.part4-1 div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: calc(100%/4);
+}
 .part4-1 img {
-    width: 323px;
-    height: 232px;
+    width: 250px;
+    height: 300px;
+    min-width: 150px;
+    min-height: 200px;
     padding: 15px;
 }
 .mask3 {
     width: 100%;
     margin: 0;
-    background: url(photos/blue.jpeg);
+    background: url(photos/l);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover; 
